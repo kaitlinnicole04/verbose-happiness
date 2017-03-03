@@ -1,6 +1,14 @@
-<h1>Editing Cart</h1>
+<div class="panel panel-primary">
+  
+<div class="panel-heading"><h2>Editing Cart</h2></div>
+
+<div class="panel-body">
+<div class="table-responsive">
 
 <%= render 'form', cart: @cart %>
 
-<%= link_to 'Show', @cart , class:"btn btn-xs btn-default" %> |
-<%= link_to 'Back', carts_path , class:"btn btn-xs btn-default"  %>
+<%= link_to 'Show', @cart , class:"btn btn-xs btn-info" %> |
+<%= link_to 'Back', carts_path , class:"btn btn-xs btn-danger"  %>
+
+</div>
+</div>
