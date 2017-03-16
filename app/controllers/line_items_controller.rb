@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+  #skip_before_action :authorize, only: :create
+  skip_before_action :authorize, only: [:index, :show, :new, :create]
   
   include CurrentCart
   before_action :set_cart, only: [:create]

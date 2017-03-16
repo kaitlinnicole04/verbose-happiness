@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
  <body class="container" style= "background-color: rosybrown;">
     
@@ -13,12 +14,24 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">It 231 Website</a>
       </div>
+      
       <ul class="nav navbar-nav">
+        
+        <% if session[:user_id] %>
+        <ul>
+          <li><a href="/orders">Orders</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/users">Users</a></li>
+        </ul>
+        <%=button_to 'Logout', logout_path, method: :delete %>
+        <% end %>
+        
         <li><a href="/">Root</a></li>
-        <li><a href="/store/index">Store</a></li>
+        <li><a href="/">Store</a></li>
         <li><a href="/carts">Carts</a></li>
         <li><a href="/line_items">Line Items</a></a></li>
       </ul>
+      <%= link_to 'Sing In', login_url, class: "btn btn-xs btn-info"%>
     </div>
     </nav>
     
